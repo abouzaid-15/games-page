@@ -53,41 +53,12 @@
             margin-top: 10px;
             cursor: pointer;
         }
-
-        /* Hidden Content Locker */
-        .content-locker {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            text-align: center;
-            padding-top: 100px;
-            z-index: 9999;
-        }
-
-        .content-locker .locker-message {
-            background-color: #222;
-            padding: 20px;
-            border-radius: 10px;
-            font-size: 18px;
-        }
     </style>
 </head>
 <body>
 
     <h1>5 GAMES.STORE</h1>
     <input type="text" placeholder="APP OR GAME NAME"/>
-
-    <!-- Content Locker (Initially hidden) -->
-    <div class="content-locker" id="locker">
-        <div class="locker-message">
-            <p>Complete the task to unlock your download link.</p>
-        </div>
-    </div>
 
     <div class="app-container">
         <div class="app-card">
@@ -97,60 +68,12 @@
             <a href="#" class="install-btn" onclick="showLocker()">install</a>
         </div>
 
-        <div class="app-card">
-            <img src="https://i.pinimg.com/736x/5b/c9/48/5bc948b0ec609eedb6faed1288f5ecb3.jpg" alt="Fortnite Mobile"/>
-            <h3>FORTNITE MOBILE</h3>
-            <p>Platforms: 🖥📱</p>
-            <a href="#" class="install-btn" onclick="showLocker()">install</a>
-        </div>
-
-        <div class="app-card">
-            <img src="https://i.pinimg.com/736x/00/a8/e4/00a8e4a3edf9937c186dbecd009fd48d.jpg" alt="Minecraft"/>
-            <h3>MINECRAFT</h3>
-            <p>Platforms: 🖥📱</p>
-            <a href="#" class="install-btn" onclick="showLocker()">install</a>
-        </div>
-
-        <div class="app-card">
-            <img src="https://upload.wikimedia.org/wikipedia/en/a/a5/Grand_Theft_Auto_V.png" alt="GTA 5"/>
-            <h3>GTA 5</h3>
-            <p>Platforms: 🖥📱</p>
-            <a href="#" class="install-btn" onclick="showLocker()">install</a>
-        </div>
-
-        <div class="app-card">
-            <img src="https://i.pinimg.com/736x/ca/57/0c/ca570cb06de1e8e31344b125da129bc7.jpg" alt="EA SPORTS FC 25"/>
-            <h3>EA SPORTS FC 25</h3>
-            <p>Platforms: 🖥📱</p>
-            <a href="#" class="install-btn" onclick="showLocker()">install</a>
-        </div>
-
-        <div class="app-card">
-            <img src="https://i.pinimg.com/736x/98/15/8b/98158b2a606d3c11401046bf3f9a6af6.jpg" alt="Spider-Man"/>
-            <h3>SPIDER MAN</h3>
-            <p>Platforms: 🖥📱</p>
-            <a href="#" class="install-btn" onclick="showLocker()">install</a>
-        </div>
+        <!-- أضف باقي الألعاب بنفس الشكل -->
     </div>
 
     <script type="text/javascript">
-        // Function to show Content Locker only when the install button is clicked
         function showLocker() {
-            // Show local overlay
-            document.getElementById('locker').style.display = 'block';
-
-            // Inject CPALead script dynamically
-            var configScript = document.createElement('script');
-            configScript.type = 'text/javascript';
-            configScript.innerHTML = 'var dfYjS_kOs_OAFOVc = {"it": 4486639, "key": "b3175"};';
-            document.body.appendChild(configScript);
-
-            var lockerScript = document.createElement('script');
-            lockerScript.src = 'https://d2yc6hxtq0phup.cloudfront.net/fc0bca5.js';
-            lockerScript.onload = function () {
-                _yk(); // Trigger CPALead locker
-            };
-            document.body.appendChild(lockerScript);
+            window.open("locker.html", "_blank");
         }
     </script>
 
