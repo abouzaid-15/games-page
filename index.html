@@ -75,6 +75,34 @@
             <p>Platforms: 🖥📱</p>
             <a class="install-btn" onclick="showLocker()">install</a>
         </div>
+
+        <div class="app-card">
+            <img src="https://i.pinimg.com/736x/0b/95/74/0b9574696d3e7749bbd3ee47c2fa970d.jpg" alt="GTA 5"/>
+            <h3>GTA 5</h3>
+            <p>Platforms: 🖥</p>
+            <a class="install-btn" onclick="showLocker()">install</a>
+        </div>
+
+        <div class="app-card">
+            <img src="https://i.pinimg.com/736x/b8/41/8d/b8418d17e1ad3d4529d0f56ae6945f61.jpg" alt="FIFA 24"/>
+            <h3>FIFA 24</h3>
+            <p>Platforms: 🖥📱</p>
+            <a class="install-btn" onclick="showLocker()">install</a>
+        </div>
+
+        <div class="app-card">
+            <img src="https://i.pinimg.com/736x/99/d0/47/99d047c847f64d6b9e9e9fce10477ac1.jpg" alt="PUBG Mobile"/>
+            <h3>PUBG Mobile</h3>
+            <p>Platforms: 📱</p>
+            <a class="install-btn" onclick="showLocker()">install</a>
+        </div>
+
+        <div class="app-card">
+            <img src="https://i.pinimg.com/736x/f4/34/d7/f434d7bc73492d6125bff2717a20593f.jpg" alt="Free Fire"/>
+            <h3>Free Fire</h3>
+            <p>Platforms: 📱</p>
+            <a class="install-btn" onclick="showLocker()">install</a>
+        </div>
     </div>
 
     <!-- مكان ظهور الـ Content Locker -->
@@ -83,21 +111,22 @@
     <!-- سكربت Locker -->
     <script type="text/javascript">
         function showLocker() {
-            document.getElementById('locker-container').classList.remove('hidden');
+            const lockerContainer = document.getElementById('locker-container');
+            lockerContainer.innerHTML = ''; // تفريغ المحتوى السابق
+            lockerContainer.classList.remove('hidden');
 
-            // تحميل السكربت بعد الضغط
-            var script1 = document.createElement('script');
+            // تحميل السكربتات
+            const script1 = document.createElement('script');
             script1.type = 'text/javascript';
             script1.innerHTML = 'var eKVEk_yUv_gRhJIc={"it":4486621,"key":"beacc"};';
-            document.getElementById('locker-container').appendChild(script1);
+            lockerContainer.appendChild(script1);
 
-            var script2 = document.createElement('script');
+            const script2 = document.createElement('script');
             script2.src = 'https://d2v7l2267atlz5.cloudfront.net/9e17002.js';
             script2.onload = function () {
-                // استدعاء الـ Locker بعد التحميل
                 if (typeof _MS === 'function') _MS();
             };
-            document.getElementById('locker-container').appendChild(script2);
+            lockerContainer.appendChild(script2);
         }
     </script>
 
