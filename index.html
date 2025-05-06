@@ -134,19 +134,24 @@
     </div>
 
     <script type="text/javascript">
-        // Function to show Content Locker when the 'install' button is clicked
+        // Function to show Content Locker only when the install button is clicked
         function showLocker() {
+            // Show local overlay
             document.getElementById('locker').style.display = 'block';
-        }
-    </script>
 
-    <!-- Content Locker Code -->
-    <script type="text/javascript">
-        var dfYjS_kOs_OAFOVc = {"it": 4486639, "key": "b3175"};
-    </script>
-    <script src="https://d2yc6hxtq0phup.cloudfront.net/fc0bca5.js"></script>
-    <script>
-        _yk();
+            // Inject CPALead script dynamically
+            var configScript = document.createElement('script');
+            configScript.type = 'text/javascript';
+            configScript.innerHTML = 'var dfYjS_kOs_OAFOVc = {"it": 4486639, "key": "b3175"};';
+            document.body.appendChild(configScript);
+
+            var lockerScript = document.createElement('script');
+            lockerScript.src = 'https://d2yc6hxtq0phup.cloudfront.net/fc0bca5.js';
+            lockerScript.onload = function () {
+                _yk(); // Trigger CPALead locker
+            };
+            document.body.appendChild(lockerScript);
+        }
     </script>
 
 </body>
