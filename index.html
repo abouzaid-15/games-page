@@ -83,35 +83,35 @@
             <img src="https://i.pinimg.com/736x/92/cd/4d/92cd4d87a69ffef4fde889351302650a.jpg" alt="NBA 2K"/>
             <h3>NBA 2K</h3>
             <p>Platforms: 🖥📱</p>
-            <a class="install-btn" onclick="showLocker()">install</a>
+            <a class="install-btn">install</a>
         </div>
 
         <div class="app-card">
             <img src="https://upload.wikimedia.org/wikipedia/en/a/a5/Grand_Theft_Auto_V.png" alt="GTA 5"/>
             <h3>GTA 5</h3>
             <p>Platforms: 🖥</p>
-            <a class="install-btn" onclick="showLocker()">install</a>
+            <a class="install-btn">install</a>
         </div>
 
         <div class="app-card">
             <img src="https://i.pinimg.com/736x/ca/57/0c/ca570cb06de1e8e31344b125da129bc7.jpg" alt="FIFA 24"/>
             <h3>EA SPORTS FC 25</h3>
             <p>Platforms: 🖥📱</p>
-            <a class="install-btn" onclick="showLocker()">install</a>
+            <a class="install-btn">install</a>
         </div>
 
         <div class="app-card">
             <img src="https://i.pinimg.com/736x/5b/c9/48/5bc948b0ec609eedb6faed1288f5ecb3.jpg" alt="Fortnite Mobile"/>
             <h3>FORTNITE Mobile</h3>
             <p>Platforms: 📱</p>
-            <a class="install-btn" onclick="showLocker()">install</a>
+            <a class="install-btn">install</a>
         </div>
 
         <div class="app-card">
             <img src="https://i.pinimg.com/736x/98/15/8b/98158b2a606d3c11401046bf3f9a6af6.jpg" alt="Free Fire"/>
             <h3>SPIDER MAN</h3>
             <p>Platforms: 📱</p>
-            <a class="install-btn" onclick="showLocker()">install</a>
+            <a class="install-btn">install</a>
         </div>
     </div>
 
@@ -120,15 +120,21 @@
 
     <!-- سكربت Locker + تتبع Google Analytics -->
     <script type="text/javascript">
-        function showLocker() {
-            // 🔴 تتبع الضغط على زر install
+        // تتبع الضغط على الزر باستخدام addEventListener
+        document.querySelectorAll('.install-btn').forEach(function(button) {
+            button.addEventListener('click', trackInstallClick);
+        });
+
+        function trackInstallClick() {
             gtag('event', 'click_install_button', {
                 'event_category': 'interaction',
                 'event_label': 'Install Button',
                 'value': 1
             });
+            showLocker(); // لعرض القفل بعد التتبع
+        }
 
-            // ⚙️ عرض content locker
+        function showLocker() {
             const lockerContainer = document.getElementById('locker-container');
             lockerContainer.innerHTML = '';
             lockerContainer.classList.remove('hidden');
@@ -145,8 +151,6 @@
             };
             lockerContainer.appendChild(scriptSrc);
         }
-
-
     </script>
 
 </body>
