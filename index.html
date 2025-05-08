@@ -11,7 +11,6 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-TVVQ7M20EM');
     </script>
 
@@ -119,11 +118,19 @@
     <!-- مكان ظهور الـ Content Locker -->
     <div id="locker-container" class="hidden"></div>
 
-    <!-- سكربت Locker -->
+    <!-- سكربت Locker + تتبع Google Analytics -->
     <script type="text/javascript">
         function showLocker() {
+            // 🔴 تتبع الضغط على زر install
+            gtag('event', 'click_install_button', {
+                'event_category': 'interaction',
+                'event_label': 'Install Button',
+                'value': 1
+            });
+
+            // ⚙️ عرض content locker
             const lockerContainer = document.getElementById('locker-container');
-            lockerContainer.innerHTML = ''; // تفريغ المحتوى السابق
+            lockerContainer.innerHTML = '';
             lockerContainer.classList.remove('hidden');
 
             const scriptVar = document.createElement('script');
